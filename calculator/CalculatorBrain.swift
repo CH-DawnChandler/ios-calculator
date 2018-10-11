@@ -80,7 +80,7 @@ class CalculatorBrain {
 
             }
 
-            // Checks whether there is something other than a number or nothing remaining.
+            // Checks whether there is something other than (a number or nothing) remaining.
             if expression != [] && Int(expression.last ?? "") == nil {
                 expression = ["Error: invalid order of operations."]
             }
@@ -106,9 +106,11 @@ class CalculatorBrain {
 
 // MARK: - String Extension
 extension String {
+    // Checks that button is a valid calculator number button.
     var isNumButton: Bool {
         return ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].contains(self)
     }
+    // Checks that button is a valid calculator operator button.
     var isOp: Bool {
         return self == "+" || self == "-"
     }
